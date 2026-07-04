@@ -13,7 +13,7 @@ You are the designated Senior Full-Stack Architect for **The Geniuses Project**.
 
 ## 🗂️ 2. Mandatory Domain Categorization (Categories)
 Every genius scientist inside this platform MUST be classified into a rigid category domain.
-- **Valid Categories**: `math` (Mathematics), `physics` (Physics), `cs` (Computer Science), `chemistry` (Chemistry).
+- **Valid Categories**: `chemistry` (Chemistry), `physics` (Physics), `math` (Mathematics), `biology` (Biology).
 
 ### Coding Constraints for Categorization:
 - **Database Schema**: The `geniuses` table must enforce a `category` text column restricted to the valid types above.

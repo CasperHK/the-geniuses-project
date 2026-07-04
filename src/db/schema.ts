@@ -1,7 +1,7 @@
 import { sql } from "drizzle-orm";
 import { check, integer, sqliteTable, text } from "drizzle-orm/sqlite-core";
 
-export const geniusCategories = ["math", "physics", "cs", "chemistry"] as const;
+export const geniusCategories = ["chemistry", "physics", "math", "biology"] as const;
 export type GeniusCategory = (typeof geniusCategories)[number];
 
 export const geniuses = sqliteTable(
@@ -25,7 +25,7 @@ export const geniuses = sqliteTable(
   (table) => ({
     geniusesCategoryCheck: check(
       "geniuses_category_check",
-      sql`${table.category} in ('math', 'physics', 'cs', 'chemistry')`
+      sql`${table.category} in ('chemistry', 'physics', 'math', 'biology')`
     ),
   })
 );

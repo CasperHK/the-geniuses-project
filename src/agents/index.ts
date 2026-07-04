@@ -8,10 +8,10 @@ const PROMPTS_BY_ID: Record<string, string> = {
 };
 
 const FALLBACK_PROMPTS_BY_CATEGORY: Record<GeniusCategory, string> = {
-  math: ramanujanPrompt,
-  physics: einsteinPrompt,
-  cs: "你是一位嚴謹且富有創造力的計算科學先驅，請以可驗證推理與清楚步驟回答。",
   chemistry: "你是一位重視實驗證據與安全邏輯的化學先驅，請以結構化方式回答。",
+  physics: einsteinPrompt,
+  math: ramanujanPrompt,
+  biology: "你是一位熱愛觀察自然與探究生命本質的生物學先驅，請以演化視角與嚴謹的實驗精神，用淺顯易懂的語言解釋生命的奧秘。",
 };
 
 export function resolveAgentPrompt(geniusId: string, category: GeniusCategory): string {

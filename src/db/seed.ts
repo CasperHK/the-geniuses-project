@@ -1,4 +1,4 @@
-import { eq } from "drizzle-orm";
+import { eq, notInArray } from "drizzle-orm";
 import { db } from "./index";
 import { achievements, geniuses } from "./schema";
 
@@ -64,29 +64,29 @@ const profiles = [
   },
   {
     genius: {
-      id: "turing",
-      name: "Alan Turing",
-      chineseName: "艾倫・圖靈",
-      slug: "alan-turing",
-      category: "cs" as const,
-      era: "1912-1954",
-      bio: "計算理論與人工智慧先驅，奠定現代計算機科學基礎。",
+      id: "darwin",
+      name: "Charles Darwin",
+      chineseName: "查爾斯・達爾文",
+      slug: "charles-darwin",
+      category: "biology" as const,
+      era: "1809-1882",
+      bio: "演化論的奠基者，以自然選擇理論改變了人類對生命起源與多樣性的理解。",
       avatarUrl: null,
       createdAt: now,
       updatedAt: now,
     },
     achievements: [
       {
-        title: "圖靈機模型",
-        description: "形式化可計算性的經典模型。",
-        latex: "\\delta(q,a)=(q',a',d)",
-        year: 1936,
+        title: "哈地－溫伯格平衡",
+        description: "描述理想族群中基因型頻率與等位基因頻率的穩定關係。",
+        latex: "p^2 + 2pq + q^2 = 1",
+        year: 1908,
       },
       {
-        title: "停機問題不可判定",
-        description: "證明不存在通用演算法可判定所有程式是否停機。",
-        latex: "\\nexists M\\text{ decides HALT for all inputs}",
-        year: 1936,
+        title: "族群增長模型",
+        description: "描述生物族群在資源限制下的增長與收斂行為。",
+        latex: "\\frac{dN}{dt} = rN\left(1 - \\frac{N}{K}\right)",
+        year: 1920,
       },
     ],
   },
@@ -121,6 +121,11 @@ const profiles = [
 ];
 
 async function seed(): Promise<void> {
+  const profileIds = profiles.map((profile) => profile.genius.id);
+
+  await db.delete(achievements).where(notInArray(achievements.geniusId, profileIds));
+  await db.delete(geniuses).where(notInArray(geniuses.id, profileIds));
+
   for (const profile of profiles) {
     await db
       .insert(geniuses)
