@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import "./globals.css";
+import "katex/dist/katex.min.css";
 
 export const metadata: Metadata = {
-  title: "The Geniuses Project",
-  description: "A structured full-stack platform for scientific genius profiles and AI agents.",
+  title: "科學天才計畫",
+  description: "以分類結構探索科學巨匠與 AI 智能體互動。",
 };
 
 interface RootLayoutProps {
@@ -12,7 +14,7 @@ interface RootLayoutProps {
 
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
-    <html lang="en">
+    <html lang="zh-Hant">
       <body>{children}</body>
     </html>
   );

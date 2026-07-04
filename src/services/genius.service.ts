@@ -8,6 +8,7 @@ function toGenius(row: GeniusRow): Genius {
   return {
     id: row.id,
     name: row.name,
+    chineseName: row.chineseName,
     slug: row.slug,
     category: row.category,
     era: row.era,

@@ -8,7 +8,7 @@ interface GeniusNavProps {
 
 export function GeniusNav({ groups }: GeniusNavProps) {
   return (
-    <nav aria-label="Genius categories">
+    <nav aria-label="科學家分類" className="category-nav fade-in">
       <ul>
         {groups
           .filter((group) => group.items.length > 0)

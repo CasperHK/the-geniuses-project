@@ -17,8 +17,10 @@ export default async function GeniusPage({ params }: GeniusPageProps) {
   }
 
   return (
-    <main>
-      <Link href="/">Back to categories</Link>
+    <main className="page-shell">
+      <Link className="back-link" href="/">
+        回到分類總覽
+      </Link>
       <GeniusProfile profile={profile} />
     </main>
   );

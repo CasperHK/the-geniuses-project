@@ -3,6 +3,7 @@ import type { GeniusCategory } from "../constants/genius-categories";
 export interface Genius {
   id: string;
   name: string;
+  chineseName: string;
   slug: string;
   category: GeniusCategory;
   era: string | null;

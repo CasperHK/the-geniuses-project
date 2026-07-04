@@ -9,6 +9,7 @@ export const geniuses = sqliteTable(
   {
     id: text("id").primaryKey(),
     name: text("name").notNull(),
+    chineseName: text("chinese_name").notNull(),
     slug: text("slug").notNull().unique(),
     category: text("category").$type<GeniusCategory>().notNull(),
     era: text("era"),
