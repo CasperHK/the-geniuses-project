@@ -189,6 +189,15 @@ a {
   margin: 0;
 }
 
+.genius-avatar {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 1px solid #87b7a6;
+  background: #f5faf8;
+}
+
 .genius-zh-name {
   margin: 0;
   color: #1e5f73;
@@ -224,6 +233,16 @@ a {
 
 .profile-header h1 {
   margin: 0;
+}
+
+.profile-avatar {
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 1 / 1;
+  border-radius: 20px;
+  border: 1px solid #87b7a6;
+  background: #f5faf8;
+  margin-bottom: 0.8rem;
 }
 
 .profile-zh-name {

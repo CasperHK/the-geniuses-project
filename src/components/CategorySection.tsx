@@ -21,6 +21,14 @@ export function CategorySection({ group }: CategorySectionProps) {
         {group.items.map((genius) => (
           <li key={genius.id} className="genius-card">
             <Link className="genius-card-link" href={`/genius/${genius.id}`}>
+              {genius.avatarUrl ? (
+                <img
+                  className="genius-avatar"
+                  src={genius.avatarUrl}
+                  alt={`${genius.name} portrait`}
+                  loading="lazy"
+                />
+              ) : null}
               <h3>{genius.name}</h3>
               <p className="genius-zh-name">{genius.chineseName}</p>
               {genius.era ? <p className="genius-era">{genius.era}</p> : null}

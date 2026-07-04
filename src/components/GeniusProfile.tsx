@@ -25,6 +25,13 @@ export function GeniusProfile({ profile }: GeniusProfileProps) {
   return (
     <article className="profile-card fade-in">
       <header className="profile-header">
+        {genius.avatarUrl ? (
+          <img
+            className="profile-avatar"
+            src={genius.avatarUrl}
+            alt={`${genius.name} portrait`}
+          />
+        ) : null}
         <h1>
           {genius.name}
           <span className="profile-zh-name"> {genius.chineseName}</span>
